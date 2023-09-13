@@ -48,7 +48,7 @@ function Sidebar() {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      style={{ height: shortHeight ? "30%" : "100%" }}
+      style={{ height: shortHeight ? "30%" : "100%" }}  
     >
       <motion.div className="background" variants={sidebar} />
 

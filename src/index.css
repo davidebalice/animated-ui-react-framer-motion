@@ -118,7 +118,7 @@ li {
 .openedCardContainer {
   border-radius: 15px;
   cursor: pointer;
-  width: 44rem;
+  width: 94%;
   height: calc(100% - 10rem);
   position: absolute;
   top: 0;
@@ -135,9 +135,10 @@ li {
 
 .openedCard {
   background: white;
-  width: 700px;
-  height: 400px;
-  margin: 0 1rem;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin: 0 auto;
   border-radius: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -233,31 +234,31 @@ a {
   display: flex;
 }
 .homepage {
-  background:url('./assets/bg1.jpg');
+  background: url("./assets/bg1.jpg");
   height: 50vh;
   background-size: cover;
   background-position: center center;
 }
 .page1 {
-  background:url('./assets/bg2.jpg');
+  background: url("./assets/bg2.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center center;
 }
 .page2 {
-  background:url('./assets/bg3.jpg');
+  background: url("./assets/bg3.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center center;
 }
 .page3 {
-  background:url('./assets/bg4.jpg');
+  background: url("./assets/bg4.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center center;
 }
 .page4 {
-  background:url('./assets/bg5.jpg');
+  background: url("./assets/bg5.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -275,4 +276,112 @@ a {
 }
 .page-description {
   font-weight: lighter;
+}
+
+.tabs-component {
+  max-width: 800px;
+  margin: auto;
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tab-links {
+  padding: 0;
+  margin: 0 auto 20px;
+  list-style: none;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab {
+  position: relative;
+}
+
+.tab a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.tab::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  position: absolute;
+  border-radius: var(--border-radius);
+  background: none;
+  transition: background 0.5s ease;
+}
+
+.tab svg {
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  fill: var(--black);
+  transition: fill 0.5s ease;
+}
+
+.tab.active::before {
+  background: var(--active-color);
+}
+
+.tab span {
+  font-weight: 700;
+  margin-left: 10px;
+  transition: color 0.5s ease;
+}
+
+.tab.active span {
+  color: var(--active-color);
+}
+
+.tab.active svg {
+  fill: var(--active-color);
+}
+
+.tab a {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tabCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.content-card {
+  width: 48%;
+  margin-bottom: 26px;
+}
+
+.content-card .info::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -5px;
+  background: var(--active-color);
+  opacity: 0.5;
+}
+
+.content-card img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.content-card h3 {
+  margin: 0 0 5px;
+}
+
+.content-card .info {
+  padding: 10px 0;
 }

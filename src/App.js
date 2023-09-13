@@ -18,7 +18,7 @@ function App() {
         <Route path="/page3" element={<Page3 />}></Route>
         <Route path="/page4" element={<Page4 />}></Route>
       </Routes>
-      <Sidebar/>
+      <Sidebar />
     </BrowserRouter>
   );
 }

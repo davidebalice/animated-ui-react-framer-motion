@@ -60,6 +60,19 @@ export const Cards = () => {
           onPanEnd={(e, info) => handlePanEnd(e, info, card)}
           onClick={(e, info) => handlePanEnd(e, info, card)}
           ref={(el) => (containerRefs.current[card] = el)}
+          initial={{
+            y: -250,
+            opacity: 0,
+            delay: 0.1,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            delay: 0.1,
+          }}
+          transition={{
+            duration: 0.2,
+          }}
         >
           {selectedId === card && (
             <>

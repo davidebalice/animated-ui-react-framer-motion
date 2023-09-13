@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import { Cards } from "../components/Cards";
+import TabComponent from "../components/TabComponent";
+import tabs from "../components/tabs";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
@@ -47,6 +49,7 @@ const Home = () => {
           <Navbar />
         </motion.div>
         <Cards />
+        <TabComponent tabs={tabs} />
       </motion.div>
     </>
   );
