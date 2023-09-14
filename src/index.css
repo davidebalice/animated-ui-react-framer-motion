@@ -105,7 +105,7 @@ li {
 }
 
 .dim-layer {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   left: 0;
@@ -120,7 +120,7 @@ li {
   cursor: pointer;
   width: 94%;
   height: calc(100% - 10rem);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -212,6 +212,32 @@ li {
 
 .cards-container::-webkit-scrollbar {
   display: none;
+}
+
+.expandableCard {
+  background: white;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+.expandableCards {
+  width: 100%;
+  height: 500px;
+  max-width: 1200px;
+  padding: 30px;
+  display: grid;
+  z-index: 10;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: #02999e;
+  margin: 0 auto;
 }
 
 .navbar {

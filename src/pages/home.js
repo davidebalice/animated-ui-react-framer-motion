@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import { Cards } from "../components/Cards";
+import { ExpandableCards } from "../components/ExpandableCards";
 import TabComponent from "../components/TabComponent";
 import tabs from "../components/tabs";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -48,6 +49,7 @@ const Home = () => {
           {" "}
           <Navbar />
         </motion.div>
+        <ExpandableCards />
         <Cards />
         <TabComponent tabs={tabs} />
       </motion.div>

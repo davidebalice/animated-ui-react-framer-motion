@@ -31,6 +31,18 @@ function Sidebar() {
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   const [shortHeight, setShortHeight] = useState(false);
+  const [showSidebar, setShowSidebar] = useState("none");
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowSidebar("block");
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   useEffect(() => {
     if (!isOpen) {
       const timeout = setTimeout(() => {
@@ -48,7 +60,7 @@ function Sidebar() {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      style={{ height: shortHeight ? "30%" : "100%" }}  
+      style={{ height: shortHeight ? "30%" : "100%", display: showSidebar }}
     >
       <motion.div className="background" variants={sidebar} />
 
