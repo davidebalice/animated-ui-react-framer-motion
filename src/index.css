@@ -123,18 +123,79 @@ li {
 
 .card {
   background: white;
+  position: relative;
   border-radius: 15px;
   width: 100%;
   height: 100%;
   cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card:nth-child(1) {
   grid-column: span 2;
 }
 
+.card:nth-child(2) {
+  grid-column: 3;
+}
+
+.card:nth-child(3) {
+  grid-column: 4;
+}
+
+.card:nth-child(4) {
+  grid-column: 1;
+}
+
+.card:nth-child(5) {
+  grid-column: 2;
+}
+
 .card:nth-child(6) {
-  grid-column: span 2;
+  grid-column: 3 / span 2;
+}
+
+.cardImg {
+  height: 50%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.cardImgFull {
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.CardTextContainer {
+  height: 50%;
+}
+
+.CardTextContainerFull {
+  width: 100%;
+  height: 45%;
+  bottom: 0%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.CardTextContainerFullCol1{
+  padding:10px;
+  text-align: left;
+}
+
+.CardTextContainerFullCol2{
+  padding:6px;
+  text-align: right;
 }
 
 .dim-layer {
@@ -159,7 +220,7 @@ li {
   bottom: 0;
   left: 0;
   margin: auto;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -171,6 +232,7 @@ li {
   width: 100%;
   max-width: 800px;
   position: relative;
+  z-index: 20;
   height: 450px;
   margin: 0 auto;
   border-radius: 15px;
@@ -187,7 +249,7 @@ li {
   bottom: 0;
   left: 0;
   margin: auto;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -199,6 +261,7 @@ li {
   width: 100%;
   height: 100vh;
   margin: 0;
+  z-index: 20;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -250,7 +313,6 @@ li {
 .expandableCardImg {
   overflow: hidden;
   width: 40%;
-  height: 100%;
   border-radius: 6px;
   margin: 2%;
   background-size: cover;
@@ -300,11 +362,17 @@ li {
 
 .buttonClose {
   position: absolute;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   font-weight: bold;
   margin-left: calc(100% - 90px);
   font-size: 22px;
   border-radius: 50%;
+  background: #fff;
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.buttonClose:hover {
+  background: #f1f1f1;
 }
 
 .navbar {

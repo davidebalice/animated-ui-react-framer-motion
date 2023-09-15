@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { cards } from "./CardsData";
-import { Card } from "./Card";
+import { PopupCard } from "./PopupCard";
 
-export const Cards = () => {
+export const PopupCards = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [canDrag, setCanDrag] = useState(false);
   const containerRefs = useRef(new Array());
@@ -11,7 +11,7 @@ export const Cards = () => {
   const handlePanEnd = (e, info, card) => {
     if (selectedId) {
       const styles = getComputedStyle(containerRefs.current[card]);
-      const timeout = styles.transform.split(",")[4] * -0.6;
+      //const timeout = styles.transform.split(",")[4] * -0.6;
       setCanDrag(false);
       /*
       setTimeout(() => {
@@ -31,7 +31,7 @@ export const Cards = () => {
   return (
     <div className="cards">
       {cards.map((card, i) => (
-        <Card
+        <PopupCard
           card={card}
           handlePanEnd={handlePanEnd}
           canDrag={canDrag}

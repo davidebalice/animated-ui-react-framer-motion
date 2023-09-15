@@ -74,7 +74,7 @@ export const ExpandableCard = ({
           }}
           transition={{
             duration: 0.3,
-            delay: selectedCard === card ? 0.4 : 0.4,
+            delay: selectedCard === card ? 0.4 : 0.5,
           }}
         >
           <motion.div
@@ -112,7 +112,7 @@ export const ExpandableCard = ({
           }}
           transition={{
             duration: 0.2,
-            delay: selectedCard === card ? 0.7 : 0.5,
+            delay: selectedCard === card ? 0.7 : 0,
           }}
         >
           {card.title} {index}

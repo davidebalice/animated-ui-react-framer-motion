@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-export const Card = ({
+export const PopupCard = ({
   card,
   handlePanEnd,
   canDrag,
@@ -38,10 +38,12 @@ export const Card = ({
         delay: 0.1,
       }}
       transition={{
-        duration: 0.2,
+        duration: 0.4,
+        y: { duration: 0.6, delay: `0.${index + 1}` },
+        opacity: { duration: 0.5, delay: `0.${index + 1}` },
       }}
     >
-      {selectedId === card && (
+      {selectedId === card ? (
         <>
           <div
             className={
@@ -52,7 +54,10 @@ export const Card = ({
                 : "openedCard"
             }
           >
-            
+            <div
+              className="cardImg"
+              style={{ backgroundImage: `url(${card.img})` }}
+            >
               <button
                 className="buttonClose"
                 onClick={(e) => {
@@ -61,8 +66,40 @@ export const Card = ({
               >
                 X
               </button>
-            
+              ddddddddddd
+            </div>
+            <div className="CardTextContainer">ddddddddddd</div>
           </div>
+        </>
+      ) : (
+        <>
+          {card.type === "fullpage" ? (
+            <>
+              <div
+                className="cardImgFull"
+                style={{ backgroundImage: `url(${card.img})` }}
+              >
+                <div className="CardTextContainerFull">
+                  <div className="CardTextContainerFullCol1">
+                    ddddddddddd
+                  </div>
+                  <div className="CardTextContainerFullCol2">
+                    ddddddddddd
+                  </div>
+                  </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div
+                className="cardImg"
+                style={{ backgroundImage: `url(${card.img})` }}
+              >
+                ddddddddddd
+              </div>
+              <div className="CardTextContainer">ddddddddddd</div>
+            </>
+          )}
         </>
       )}
     </motion.div>
