@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import { motion } from "framer-motion";
+import Spacer from "../components/Spacer";
 
 const tabVariant = {
   active: {
@@ -64,8 +65,52 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
   };
 
   return (
-    <div className="">
-      <div className="tabs-component">
+    <div className="tabsWrapper">
+      <motion.p
+        className="text3"
+        initial={{
+          y: -250,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        exit={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.4,
+          delay: 0.5,
+        }}
+      >
+        Animated tabs
+      </motion.p>
+
+      <motion.p
+        className="text4"
+        initial={{
+          y: -250,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        exit={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.4,
+          delay: 0.7,
+        }}
+      >
+        Click on icon to change tab with animation
+      </motion.p>
+
+      <div className="tabsContainer">
         <div className="tab-links" role="tablist">
           {tabs.map((tab, index) => (
             <motion.li
@@ -90,6 +135,7 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
           />
         ))}
       </div>
+      <Spacer height="100" />
     </div>
   );
 };

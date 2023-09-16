@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { cards } from "./CardsData";
+import { cards } from "../data/cards";
 import { PopupCard } from "./PopupCard";
+import Spacer from "../components/Spacer";
 
 export const PopupCards = () => {
   const [selectedId, setSelectedId] = useState(null);
@@ -10,14 +11,7 @@ export const PopupCards = () => {
 
   const handlePanEnd = (e, info, card) => {
     if (selectedId) {
-      const styles = getComputedStyle(containerRefs.current[card]);
-      //const timeout = styles.transform.split(",")[4] * -0.6;
       setCanDrag(false);
-      /*
-      setTimeout(() => {
-        setSelectedId(null);
-      }, timeout);
-      */
     } else {
       setCanDrag(true);
       setSelectedId(card);
@@ -29,22 +23,70 @@ export const PopupCards = () => {
   };
 
   return (
-    <div className="cards">
-      {cards.map((card, i) => (
-        <PopupCard
-          card={card}
-          handlePanEnd={handlePanEnd}
-          canDrag={canDrag}
-          containerRefs={containerRefs}
-          selectedId={selectedId}
-          index={i}
-          handleCloseCard={handleCloseCard}
+    <div>
+      <motion.p
+        className="text3"
+        initial={{
+          y: -250,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        exit={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.4,
+          delay: 0.5,
+        }}
+      >
+        Popup cards
+      </motion.p>
+
+      <motion.p
+        className="text4"
+        initial={{
+          y: -250,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        exit={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.4,
+          delay: 0.7,
+        }}
+      >
+        Click on card to open in popup and view more details or open in full
+        screen
+      </motion.p>
+
+      <div className="cards">
+        {cards.map((card, i) => (
+          <PopupCard
+            card={card}
+            handlePanEnd={handlePanEnd}
+            canDrag={canDrag}
+            containerRefs={containerRefs}
+            selectedId={selectedId}
+            index={i}
+            handleCloseCard={handleCloseCard}
+          />
+        ))}
+        <motion.div
+          className="dim-layer"
+          animate={{ opacity: selectedId ? 0.3 : 0 }}
         />
-      ))}
-      <motion.div
-        className="dim-layer"
-        animate={{ opacity: selectedId ? 0.3 : 0 }}
-      />
+      </div>
+      <Spacer height="100" />
     </div>
   );
 };

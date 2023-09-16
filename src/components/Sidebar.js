@@ -60,11 +60,15 @@ function Sidebar() {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      style={{ height: shortHeight ? "30%" : "100%", display: showSidebar }}
+      style={{
+        height: shortHeight ? "30%" : "100%",
+        display: showSidebar,
+        zIndex: "19",
+      }}
     >
-      <motion.div className="background" variants={sidebar} />
+      <motion.div className="sidebarContainer" variants={sidebar} />
 
-      <div style={{ display: "flex", width: "100%" }}>
+      <div className="sidebar">
         <Navigation />
         <MenuToggle toggle={() => toggleOpen()} />
       </div>

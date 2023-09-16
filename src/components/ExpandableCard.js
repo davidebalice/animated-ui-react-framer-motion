@@ -23,7 +23,7 @@ export const ExpandableCard = ({
         opacity: 1,
         width: selectedCard === card ? "150%" : "100%",
         height: selectedCard === card ? "300%" : "100%",
-        zIndex: selectedCard === card ? 100 : 1,
+        zIndex: selectedCard === card ? 18 : 1,
       }}
       transition={{
         duration: selectedCard === card ? 0.6 : 0.5,

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logoWhite.png";
 
 function NavBar() {
-
   return (
     <div className="navbar">
-      <div className="nav-title">Page Transition Demo</div>
+      <div className="nav-title">
+        <img src={logo} alt="" className="dbLogo" />
+      </div>
       <div className="nav-options">
         <div className="nav-option">
           <Link to="/">Home</Link>
