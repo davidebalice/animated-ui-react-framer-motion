@@ -121,7 +121,7 @@ export const ExpandableCard = ({
                 delay: selectedCard === card ? 0.1 : 1,
               }}
             >
-              <AiOutlineStar size={25} style={{color:'yellow'}} />
+              <AiOutlineStar size={25} style={{ color: "yellow" }} />
             </motion.div>
           </div>
         </motion.div>

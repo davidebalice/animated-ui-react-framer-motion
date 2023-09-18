@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import cn from "classnames";
+import classes from "classnames";
 import { motion } from "framer-motion";
-import Spacer from "../components/Spacer";
+import Spacer from "./Spacer";
+import Tab from "./Tab";
 
 const tabVariant = {
   active: {
@@ -111,12 +112,11 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
       </motion.p>
 
       <div className="tabsContainer">
-        <div className="tab-links" role="tablist">
+        <div className="tabsButtons">
           {tabs.map((tab, index) => (
             <motion.li
               key={tab.id}
-              className={cn("tab", { active: activeTabIndex === index })}
-              role="presentation"
+              className={classes("tab", { active: activeTabIndex === index })}
               variants={tabVariant}
               animate={activeTabIndex === index ? "active" : "inactive"}
             >
@@ -128,11 +128,13 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
           ))}
         </div>
         {tabs.map((tab, index) => (
-          <tab.content
-            key={tab.id}
-            id={`${tab.id}-content`}
-            active={activeTabIndex === index}
-          />
+          <>
+            <Tab
+              key={tab.id}
+              id={`${tab.id}`}
+              active={activeTabIndex === index}
+            />
+          </>
         ))}
       </div>
       <Spacer height="100" />

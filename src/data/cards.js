@@ -3,7 +3,7 @@ export const cards = [
     id: 1,
     title: "Lorem ipsum dolor",
     type: "fullpage",
-    category: "Nature",
+    category: "Sea",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:
@@ -14,7 +14,7 @@ export const cards = [
     id: 2,
     title: "Sit amet consectetur",
     type: "popup",
-    category: "Sea",
+    category: "Mountain",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:
@@ -26,7 +26,7 @@ export const cards = [
     id: 3,
     title: "Consectetur adipiscing",
     type: "popup",
-    category: "Mountain",
+    category: "Sea",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:
@@ -38,7 +38,7 @@ export const cards = [
     id: 4,
     title: "Do eiusmod tempor",
     type: "popup",
-    category: "Hill",
+    category: "Mountain",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:
@@ -50,7 +50,7 @@ export const cards = [
     id: 5,
     title: "Labore et dolore magna",
     type: "popup",
-    category: "Hill",
+    category: "Sea",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:
@@ -62,7 +62,7 @@ export const cards = [
     id: 6,
     title: "Ut enim ad minim",
     type: "fullpage",
-    category: "Hill",
+    category: "Sea",
     summary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit sed do eiusmod tempor.",
     description:

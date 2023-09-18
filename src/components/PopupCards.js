@@ -2,24 +2,25 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { cards } from "../data/cards";
 import { PopupCard } from "./PopupCard";
+import { PopupCardFullpage } from "./PopupCardFullpage";
 import Spacer from "../components/Spacer";
 
 export const PopupCards = () => {
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedCard, setSelectedCard] = useState(null);
   const [canDrag, setCanDrag] = useState(false);
   const containerRefs = useRef(new Array());
 
   const handlePanEnd = (e, info, card) => {
-    if (selectedId) {
+    if (selectedCard) {
       setCanDrag(false);
     } else {
       setCanDrag(true);
-      setSelectedId(card);
+      setSelectedCard(card);
     }
   };
 
   const handleCloseCard = () => {
-    setSelectedId(null);
+    setSelectedCard(null);
   };
 
   return (
@@ -70,20 +71,34 @@ export const PopupCards = () => {
       </motion.p>
 
       <div className="cards">
-        {cards.map((card, i) => (
-          <PopupCard
-            card={card}
-            handlePanEnd={handlePanEnd}
-            canDrag={canDrag}
-            containerRefs={containerRefs}
-            selectedId={selectedId}
-            index={i}
-            handleCloseCard={handleCloseCard}
-          />
+        {cards.map((card, index) => (
+          <>
+            {card.type === "fullpage" ? (
+              <PopupCardFullpage
+                card={card}
+                handlePanEnd={handlePanEnd}
+                canDrag={canDrag}
+                containerRefs={containerRefs}
+                selectedCard={selectedCard}
+                index={index}
+                handleCloseCard={handleCloseCard}
+              />
+            ) : (
+              <PopupCard
+                card={card}
+                handlePanEnd={handlePanEnd}
+                canDrag={canDrag}
+                containerRefs={containerRefs}
+                selectedCard={selectedCard}
+                index={index}
+                handleCloseCard={handleCloseCard}
+              />
+            )}
+          </>
         ))}
         <motion.div
           className="dim-layer"
-          animate={{ opacity: selectedId ? 0.3 : 0 }}
+          animate={{ opacity: selectedCard ? 0.3 : 0 }}
         />
       </div>
       <Spacer height="100" />

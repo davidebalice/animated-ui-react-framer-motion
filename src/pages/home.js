@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import CardsWrapper from "../components/CardsWrapper";
 import { PopupCards } from "../components/PopupCards";
 import { ExpandableCards } from "../components/ExpandableCards";
-import TabComponent from "../components/TabComponent";
+import Tabs from "../components/Tabs";
 import tabs from "../data/tabs";
 import reactLogo from "../assets/react.png";
 import framerMotionLogo from "../assets/framer-motion.png";
@@ -154,7 +154,7 @@ const Home = () => {
           <ExpandableCards />
           <PopupCards />
         </CardsWrapper>
-        <TabComponent tabs={tabs} />
+        <Tabs tabs={tabs} />
       </motion.div>
     </>
   );
