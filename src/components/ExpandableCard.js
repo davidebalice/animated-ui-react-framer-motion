@@ -1,5 +1,11 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import {
+  AiOutlineStar,
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillLinkedin,
+} from "react-icons/ai";
 
 export const ExpandableCard = ({
   card,
@@ -38,7 +44,7 @@ export const ExpandableCard = ({
         key={index}
         initial={{
           width: "100%",
-          height: "100%",
+          height: "90%",
         }}
         animate={{
           flexDirection: selectedCard === card ? "column" : "row",
@@ -64,11 +70,13 @@ export const ExpandableCard = ({
           key={index}
           initial={{
             width: "40%",
-            height: "108%",
+            height: "100%",
+            minHeight: "100%",
           }}
           animate={{
             width: selectedCard === card ? "100%" : "40%",
-            height: selectedCard === card ? "300%" : "108%",
+            height: selectedCard === card ? "300%" : "100%",
+            minHeight: selectedCard === card ? "50%" : "100%",
             borderRadius: selectedCard === card ? "0" : "6px",
             margin: selectedCard === card ? "0%" : "2%",
           }}
@@ -77,24 +85,45 @@ export const ExpandableCard = ({
             delay: selectedCard === card ? 0.4 : 0.5,
           }}
         >
-          <motion.div
-            className="expandableCardCategory"
-            key={index}
-            initial={{
-              opacity: 0,
-              y: -150,
-            }}
-            animate={{
-              opacity: selectedCard === card ? 1 : 0,
-              y: selectedCard === card ? 0 : -150,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: selectedCard === card ? 0.1 : 0.8,
-            }}
-          >
-            {card.category} 45456654456
-          </motion.div>
+          <div className="expandableCardCategoryContainer">
+            <motion.div
+              className="expandableCardCategory"
+              key={index}
+              initial={{
+                opacity: 0,
+                y: -150,
+              }}
+              animate={{
+                opacity: selectedCard === card ? 1 : 0,
+                y: selectedCard === card ? 0 : -150,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: selectedCard === card ? 0.1 : 0.8,
+              }}
+            >
+              {card.category}
+            </motion.div>
+
+            <motion.div
+              className="expandableCardStar"
+              key={index}
+              initial={{
+                opacity: 0,
+                y: -150,
+              }}
+              animate={{
+                opacity: selectedCard === card ? 1 : 0,
+                y: selectedCard === card ? 0 : -150,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: selectedCard === card ? 0.1 : 1,
+              }}
+            >
+              <AiOutlineStar size={25} style={{color:'yellow'}} />
+            </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -102,11 +131,11 @@ export const ExpandableCard = ({
           key={index}
           initial={{
             width: "62%",
-            height: "118%",
+            height: "112%",
           }}
           animate={{
             width: selectedCard === card ? "100%" : "62%",
-            height: selectedCard === card ? "250%" : "118%",
+            height: selectedCard === card ? "250%" : "112%",
             fontSize: selectedCard === card ? "24px" : "16px",
             textAlign: selectedCard === card ? "center" : "left",
           }}
@@ -115,25 +144,74 @@ export const ExpandableCard = ({
             delay: selectedCard === card ? 0.7 : 0,
           }}
         >
-          {card.title} {index}
-          <motion.div className="expandableCardButtonContainer">
-            footer 2
-          </motion.div>
+          <motion.p
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.4,
+              delay: 0.8,
+            }}
+          >
+            {card.title}
+            <br />
+            {selectedCard !== card && (
+              <span className="category">{card.category}</span>
+            )}
+            {selectedCard === card && (
+              <motion.p
+                className="description"
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.4,
+                  delay: 1,
+                }}
+              >
+                {card.description}
+              </motion.p>
+            )}
+          </motion.p>
+
+          {selectedCard !== card && (
+            <motion.div className="expandableCardButtonContainer">
+              <div className="cardButton">detail</div>
+            </motion.div>
+          )}
         </motion.div>
       </motion.div>
 
-      <motion.div
-        className="expandableCardFooter"
-        key={index}
-        animate={{
-          opacity: selectedCard === card ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.4,
-        }}
-      >
-        footer
-      </motion.div>
+      {selectedCard === card && (
+        <motion.div
+          className="expandableCardFooter"
+          key={index}
+          animate={{
+            opacity: selectedCard === card ? 1 : 0,
+          }}
+          transition={{
+            duration: 0.4,
+          }}
+        >
+          <div className="expandableCardSocial">
+            <AiFillFacebook size={26} className="facebook" />
+            <AiFillInstagram size={26} className="instagram" />
+            <AiFillLinkedin size={26} className="linkedin" />
+          </div>
+          <div>
+            {" "}
+            <motion.div className="expandableCardButtonContainer">
+              <div className="cardButton">detail</div>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

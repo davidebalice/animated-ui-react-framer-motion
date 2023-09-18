@@ -149,7 +149,7 @@ li {
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .card:nth-child(1) {
@@ -188,11 +188,11 @@ li {
   background-position: center center;
 }
 
-.CardTextContainer {
+.cardTextContainer {
   height: 50%;
 }
 
-.CardTextContainerFull {
+.cardTextContainerFull {
   width: 100%;
   height: 45%;
   bottom: 0%;
@@ -204,14 +204,23 @@ li {
   justify-content: space-between;
 }
 
-.CardTextContainerFullCol1 {
+.cardTextContainerFullCol1 {
   padding: 10px;
   text-align: left;
 }
 
-.CardTextContainerFullCol2 {
+.cardTextContainerFullCol2 {
   padding: 6px;
   text-align: right;
+}
+
+.cardButton {
+  background: #0e8cb6;
+  border-radius: 4px;
+  width: fit-content;
+  color: #fff;
+  padding: 4px 20px;
+  font-size: 13px;
 }
 
 .dim-layer {
@@ -346,7 +355,7 @@ li {
 
 .expandableCardWrapper {
   width: 100%;
-  height: 100%;
+  height: 112%;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -354,7 +363,7 @@ li {
 
 .expandableCardTitle {
   width: 62%;
-  height: 100%;
+  height: 70%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -365,7 +374,8 @@ li {
 }
 
 .expandableCardButtonContainer {
-  text-align: right;
+  display: flex;
+  justify-content: end;
 }
 
 .expandableCardTitleSelected {
@@ -375,8 +385,53 @@ li {
 
 .expandableCardFooter {
   width: 100%;
-  background: yellow;
+  background: linear-gradient(
+    45deg,
+    #e2e2e2 10%,
+    #ccc 7%,
+    #e2e2e2 7%,
+    #bbb 40%
+  );
   opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+}
+
+.expandableCardCategory {
+  background: rgba(0, 0, 0, 0.4);
+  width: fit-content;
+  margin: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px;
+  letter-spacing: 1px;
+}
+
+.expandableCardCategoryContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expandableCardStar {
+  background: rgba(0, 0, 0, 0.4);
+  width: fit-content;
+  margin: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px;
+}
+
+.expandableCardSocial {
+  gap: 4px;
+  display: flex;
 }
 
 .buttonClose {
@@ -387,7 +442,7 @@ li {
   font-size: 22px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 .buttonClose:hover {
@@ -507,7 +562,7 @@ a {
 .tabsContainer {
   max-width: 1200px;
   margin: auto;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
@@ -639,4 +694,27 @@ a {
   color: #444;
   padding-bottom: 80px;
   text-align: center;
+}
+
+.category {
+  color: #0e8cb6;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
+  margin-top: 40px;
+}
+
+.facebook {
+  color: #1973ec;
+}
+
+.instagram {
+  color: #b508e3;
+}
+
+.linkedin {
+  color: #0173b1;
 }

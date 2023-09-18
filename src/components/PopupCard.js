@@ -68,7 +68,7 @@ export const PopupCard = ({
               </button>
               ddddddddddd
             </div>
-            <div className="CardTextContainer">ddddddddddd</div>
+            <div className="cardTextContainer">ddddddddddd</div>
           </div>
         </>
       ) : (
@@ -79,11 +79,11 @@ export const PopupCard = ({
                 className="cardImgFull"
                 style={{ backgroundImage: `url(${card.img})` }}
               >
-                <div className="CardTextContainerFull">
-                  <div className="CardTextContainerFullCol1">
+                <div className="cardTextContainerFull">
+                  <div className="cardTextContainerFullCol1">
                     ddddddddddd
                   </div>
-                  <div className="CardTextContainerFullCol2">
+                  <div className="cardTextContainerFullCol2">
                     ddddddddddd
                   </div>
                   </div>
@@ -97,7 +97,7 @@ export const PopupCard = ({
               >
                 ddddddddddd
               </div>
-              <div className="CardTextContainer">ddddddddddd</div>
+              <div className="cardTextContainer">ddddddddddd</div>
             </>
           )}
         </>
