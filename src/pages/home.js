@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import CardsWrapper from "../components/CardsWrapper";
 import { PopupCards } from "../components/PopupCards";
 import { ExpandableCards } from "../components/ExpandableCards";
+import { ColumnCards } from "../components/ColumnCards";
 import Tabs from "../components/Tabs";
 import tabs from "../data/tabs";
 import reactLogo from "../assets/react.png";
@@ -153,6 +154,7 @@ const Home = () => {
         <CardsWrapper>
           <ExpandableCards />
           <PopupCards />
+          <ColumnCards />
         </CardsWrapper>
         <Tabs tabs={tabs} />
       </motion.div>
