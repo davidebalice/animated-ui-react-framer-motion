@@ -68,7 +68,7 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
   return (
     <div className="tabsWrapper">
       <motion.p
-        className="text3"
+        className="text3 white"
         initial={{
           y: -250,
           opacity: 0,
@@ -90,7 +90,7 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
       </motion.p>
 
       <motion.p
-        className="text4"
+        className="text4 white"
         initial={{
           y: -250,
           opacity: 0,

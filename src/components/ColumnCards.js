@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { cards } from "../data/cards";
 import { ColumnCard } from "./ColumnCard";
 import Spacer from "./Spacer";
+import { PiRowsFill } from "react-icons/pi";
+import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 
 export const ColumnCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -83,28 +85,85 @@ export const ColumnCards = () => {
           delay: 0.7,
         }}
       >
-        Change column e type of card with animation
+        Change column and type of card with animation
       </motion.p>
-      <div
-        className="selector"
-        style={{ border: "1px solid", fontSize: "20px", textAlign: "center" }}
-      >
-        <div onClick={() => handleColumn(1)}>1 Columns</div>
-        <div onClick={() => handleColumn(2)}>2 Columns</div>
-        <div onClick={() => handleColumn(3)}>3 Columns</div>
-        <div onClick={() => handleColumn(4)}>4 Columns</div>
-        <div onClick={() => handleColumn(5)}>5 Columns</div>
-        <div onClick={() => handleFirstColumn(true)}>expand first col</div>
-        <div onClick={() => handleTypeCard("column")}>column</div>
-        <div onClick={() => handleTypeCard("row")}>row</div>
-        <label>
-          <input
-            type="checkbox"
-            checked={firstColumn}
-            onChange={handleFirstColumn}
-          />
-          Checkbox
-        </label>
+      <div className="buttonContainer">
+        <div>
+          Columns:
+          <div className="buttonColumnWrapper">
+            <div
+              onClick={() => handleColumn(1)}
+              className="buttonColumn"
+              style={column === 1 ? { outline: "2px solid #336699" } : {}}
+            >
+              1
+            </div>
+            <div
+              onClick={() => handleColumn(2)}
+              className="buttonColumn"
+              style={column === 2 ? { outline: "2px solid #336699" } : {}}
+            >
+              2
+            </div>
+            <div
+              onClick={() => handleColumn(3)}
+              className="buttonColumn"
+              style={column === 3 ? { outline: "2px solid #336699" } : {}}
+            >
+              3
+            </div>
+            <div
+              onClick={() => handleColumn(4)}
+              className="buttonColumn"
+              style={column === 4 ? { outline: "2px solid #336699" } : {}}
+            >
+              4
+            </div>
+            <div
+              onClick={() => handleColumn(5)}
+              className="buttonColumn"
+              style={column === 5 ? { outline: "2px solid #336699" } : {}}
+            >
+              5
+            </div>
+          </div>
+        </div>
+
+        <div>
+          Type of card:
+          <div className="buttonColumnWrapper">
+            <div
+              onClick={() => handleTypeCard("column")}
+              className="buttonColumn"
+              style={
+                typeCard === "column" ? { outline: "2px solid #336699" } : {}
+              }
+            >
+              <TfiLayoutColumn3Alt size={20} />
+            </div>
+            <div
+              onClick={() => handleTypeCard("row")}
+              className="buttonColumn"
+              style={typeCard === "row" ? { outline: "2px solid #336699" } : {}}
+            >
+              <PiRowsFill size={28} />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          Expand first column
+          <div className="buttonColumnWrapper">
+            <label className="buttonColumn">
+              <input
+                type="checkbox"
+                checked={firstColumn}
+                onChange={handleFirstColumn}
+                className="checkboxColumn"
+              />
+            </label>
+          </div>
+        </div>
       </div>
 
       <div

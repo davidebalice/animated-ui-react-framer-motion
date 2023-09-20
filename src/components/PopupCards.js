@@ -66,8 +66,9 @@ export const PopupCards = () => {
           delay: 0.7,
         }}
       >
-        Click on card to open in popup and view more details or open in full
-        screen
+        Click on card to open in popup and view more details 
+        <br />
+        or open card in full screen
       </motion.p>
 
       <div className="cards">

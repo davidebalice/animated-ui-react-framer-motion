@@ -10,6 +10,8 @@ import tabs from "../data/tabs";
 import reactLogo from "../assets/react.png";
 import framerMotionLogo from "../assets/framer-motion.png";
 import Particles from "../components/Particles";
+import Footer from "../components/Footer";
+import github from "../assets/github2_white.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
@@ -69,7 +71,25 @@ const Home = () => {
             className="fadeWrapper"
           >
             {" "}
-            <Navbar />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexDirection: "row",
+                width: "100%",
+              }}
+            >
+              <p> </p>
+              <Navbar />
+              <a
+                href="https://github.com/davidebalice/animated-ui-react-framer-motion"
+                target="_blank"
+                rel="noreferrer"
+                className="githubLogo"
+              >
+                <img src={github} alt="" className="dbLogo" />
+              </a>
+            </div>
             <div>
               <div className="fadeWrapperLogo">
                 <motion.img
@@ -151,13 +171,16 @@ const Home = () => {
             <div>&nbsp;</div>
           </motion.div>
         </motion.div>
-        <CardsWrapper>
+        <CardsWrapper section={1}>
           <ExpandableCards />
           <PopupCards />
+        </CardsWrapper>
+        <CardsWrapper section={2}>
           <ColumnCards />
         </CardsWrapper>
         <Tabs tabs={tabs} />
       </motion.div>
+      <Footer />
     </>
   );
 };
