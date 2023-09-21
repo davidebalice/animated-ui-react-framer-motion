@@ -1,5 +1,7 @@
 import NavBar from "../components/Navbar";
 import { motion } from "framer-motion";
+import github from "../assets/github2_white.png";
+import Navbar from "../components/Navbar";
 
 function Page1() {
   return (
@@ -8,8 +10,28 @@ function Page1() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
     >
-      <NavBar></NavBar>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row",
+          width: "100%",
+        }}
+      >
+        <p> </p>
+        <Navbar />
+        <a
+          href="https://github.com/davidebalice/animated-ui-react-framer-motion"
+          target="_blank"
+          rel="noreferrer"
+          className="githubLogo"
+        >
+          <img src={github} alt="" className="dbLogo" />
+        </a>
+      </div>
+
       <motion.div
         className="page-body"
         initial={{
@@ -18,7 +40,7 @@ function Page1() {
         animate={{
           y: 0,
         }}
-        transition={{ delay: 0.4 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
       >
         <div className="page-title">Page #1</div>
         <div className="page-description">

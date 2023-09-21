@@ -1,5 +1,7 @@
 import NavBar from "../components/Navbar";
 import { motion } from "framer-motion";
+import github from "../assets/github2_white.png";
+import Navbar from "../components/Navbar";
 
 function Page4() {
   return (
@@ -21,7 +23,25 @@ function Page4() {
         duration: 0.3,
       }}
     >
-      <NavBar></NavBar>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row",
+          width: "100%",
+        }}
+      >
+        <p> </p>
+        <Navbar />
+        <a
+          href="https://github.com/davidebalice/animated-ui-react-framer-motion"
+          target="_blank"
+          rel="noreferrer"
+          className="githubLogo"
+        >
+          <img src={github} alt="" className="dbLogo" />
+        </a>
+      </div>
       <motion.div
         className="page-body"
         initial={{

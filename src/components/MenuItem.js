@@ -28,8 +28,12 @@ export const MenuItem = ({ i, page }) => {
         whileTap={{ scale: 0.95 }}
         className="menuItem"
       >
-        <div className="iconPlaceholder">{page.icon}</div>
-        <div className="textPlaceholder">{page.title}</div>
+        <div className="iconPlaceholder">
+          {page.icon}
+        </div>
+        <div className="textPlaceholder">
+          {page.title}
+        </div>
       </motion.li>
     </Link>
   );

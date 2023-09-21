@@ -90,6 +90,8 @@ li {
   border-radius: 50%;
   flex: 40px 0;
   margin-right: 20px;
+  color:#333;
+  font-size: 24px;
 }
 
 .navigation {
@@ -104,6 +106,8 @@ li {
 .menuItem {
   background: rgba(255, 255, 255, 0.2);
   width: 240px;
+  display: flex;
+  align-items: center;
 }
 
 .textPlaceholder {
@@ -1042,7 +1046,7 @@ li {
   position: absolute;
   top: 0px;
   transform-origin: 50% -30px;
-  margin-top: 20px;
+  margin-top: 30px;
   overflow: hidden;
   min-width: 150px;
   min-height: 150px;
@@ -1055,13 +1059,13 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  margin-top: 10px;
+  margin-top: 30px;
   text-align: left;
   transform-origin: 0 0;
   background: rgba(255, 255, 255, 0.8);
   padding: 14px 22px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 2px solid #bbb;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }

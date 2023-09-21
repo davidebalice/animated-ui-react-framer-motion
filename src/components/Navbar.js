@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../assets/logoWhite.png";
+import Submenu from "./Submenu";
 
 function NavBar() {
   const [isHover, toggleHover] = useState(false);
@@ -10,141 +11,124 @@ function NavBar() {
     toggleHover(!isHover);
   };
 
-  const subMenuAnimate = {
-    enter: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-      },
-      display: "block",
-    },
-    exit: {
-      scale: 0.5,
-      opacity: 0,
-      transition: {
-        duration: 0.1,
-        delay: 0.2,
-      },
-      transitionEnd: {
-        display: "none",
-      },
-    },
-  };
-
   return (
     <div className="navbar">
       <div className="nav-title">
-        <img src={logo} alt="" className="dbLogo" />
+        <motion.img
+          src={logo}
+          alt=""
+          className="dbLogo"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1,
+          }}
+        ></motion.img>
       </div>
       <div className="nav-options">
-        <div className="navButton">
+        <motion.div
+          className="navButton"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1.1,
+          }}
+        >
           <Link to="/">Home</Link>
-        </div>
+        </motion.div>
 
-        <div className="navButton">
+        <motion.div
+          className="navButton"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1.2,
+          }}
+        >
           <motion.div
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
             <Link to="/page1">Page 1</Link>
-
-            <motion.div
-              className="subMenu"
-              initial="exit"
-              animate={isHover ? "enter" : "exit"}
-              variants={subMenuAnimate}
-            >
-              <div className="subMenuBg">
-                {isHover && (
-                  <>
-                    <motion.div
-                      className="subMenuItem"
-                      initial={{
-                        x: -250,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.1,
-                      }}
-                    >
-                      Subpage 1
-                    </motion.div>
-
-                    <motion.div
-                      className="subMenuItem"
-                      initial={{
-                        x: -250,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.2,
-                      }}
-                    >
-                      Subpage 2
-                    </motion.div>
-
-                    <motion.div
-                      className="subMenuItem"
-                      initial={{
-                        x: -250,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.3,
-                      }}
-                    >
-                      Subpage 3
-                    </motion.div>
-
-                    <motion.div
-                      className="subMenuItem"
-                      initial={{
-                        x: -250,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: 0,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.4,
-                      }}
-                    >
-                      Subpage 4
-                    </motion.div>
-                  </>
-                )}
-              </div>
-            </motion.div>
+            <Submenu isHover={isHover} />
           </motion.div>
-        </div>
+        </motion.div>
 
-        <div className="navButton">
+        <motion.div
+          className="navButton"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1.3,
+          }}
+        >
           <Link to="/page2"> Page 2 </Link>
-        </div>
-        <div className="navButton">
+        </motion.div>
+
+        <motion.div
+          className="navButton"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1.4,
+          }}
+        >
           <Link to="/page3"> Page 3</Link>
-        </div>
-        <div className="navButton">
+        </motion.div>
+
+        <motion.div
+          className="navButton"
+          initial={{
+            y: -250,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 1.5,
+          }}
+        >
           <Link to="/page4"> Page 4</Link>
-        </div>
+        </motion.div>
+
       </div>
     </div>
   );
