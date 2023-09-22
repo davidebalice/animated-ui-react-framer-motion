@@ -10,7 +10,7 @@ function Page1() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.7, delay: 0.1 }}
+      transition={{ duration: 2, delay: 0.1 }}
     >
       <div
         style={{
@@ -33,19 +33,43 @@ function Page1() {
       </div>
 
       <motion.div
-        className="page-body"
+        className="pageBody"
         initial={{
           y: -1050,
+          opacity: 0,
         }}
         animate={{
           y: 0,
+          opacity: 1,
         }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <div className="page-title">Page #1</div>
-        <div className="page-description">
-          This is the page number 1 of the React.js Transition demo
-        </div>
+        <motion.div
+          className="pageTitle"
+          initial={{
+            y: -1050,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          Page 1
+        </motion.div>
+        <motion.div
+          className="pageDescription"
+          initial={{
+            y: -1050,
+          }}
+          animate={{
+            y: 0,
+          }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          Fade transition
+        </motion.div>
       </motion.div>
     </motion.div>
   );

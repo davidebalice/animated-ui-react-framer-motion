@@ -8,11 +8,12 @@ function Page2() {
     <motion.div
       className="page2"
       initial={{
-        y: -150,
+        y: -1050,
       }}
       animate={{
         y: 0,
       }}
+      transition={{ duration: 0.6, delay: 0.1 }}
     >
       <div
         style={{
@@ -34,7 +35,7 @@ function Page2() {
         </a>
       </div>
       <motion.div
-        className="page-body"
+        className="pageBody"
         initial={{
           y: -1050,
         }}
@@ -43,10 +44,32 @@ function Page2() {
         }}
         transition={{ delay: 0.4 }}
       >
-        <div className="page-title">Page #2</div>
-        <div className="page-description">
-          This is the page number 2 of the React.js Transition demo
-        </div>
+        <motion.div
+          className="pageTitle"
+          initial={{
+            y: -1050,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          Page 2
+        </motion.div>
+        <motion.div
+          className="pageDescription"
+          initial={{
+            y: -1050,
+          }}
+          animate={{
+            y: 0,
+          }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          Slide transition
+        </motion.div>
       </motion.div>
     </motion.div>
   );

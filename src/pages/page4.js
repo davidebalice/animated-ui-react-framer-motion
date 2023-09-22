@@ -20,7 +20,7 @@ function Page4() {
         y: -150,
       }}
       transition={{
-        duration: 0.3,
+        duration: 0.6,
       }}
     >
       <div
@@ -43,7 +43,7 @@ function Page4() {
         </a>
       </div>
       <motion.div
-        className="page-body"
+        className="pageBody"
         initial={{
           y: -1050,
         }}
@@ -52,10 +52,32 @@ function Page4() {
         }}
         transition={{ delay: 0.4 }}
       >
-        <div className="page-title">Page #4</div>
-        <div className="page-description">
-          This is the page number 4 of the React.js Transition demo
-        </div>
+        <motion.div
+          className="pageTitle"
+          initial={{
+            y: -1050,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          Page 4
+        </motion.div>
+        <motion.div
+          className="pageDescription"
+          initial={{
+            y: -1050,
+          }}
+          animate={{
+            y: 0,
+          }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          Flip transition
+        </motion.div>
       </motion.div>
     </motion.div>
   );

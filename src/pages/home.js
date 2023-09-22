@@ -146,7 +146,7 @@ const Home = () => {
                   delay: 1.7,
                 }}
               >
-                Examples of implementing ui animations with
+                Examples of ui animations with
                 <br />
                 React and Framer Motion
               </motion.p>

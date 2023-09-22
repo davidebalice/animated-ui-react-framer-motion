@@ -90,7 +90,7 @@ li {
   border-radius: 50%;
   flex: 40px 0;
   margin-right: 20px;
-  color:#333;
+  color: #333;
   font-size: 24px;
 }
 
@@ -713,7 +713,7 @@ li {
   background-position: center center;
 }
 
-.page-body {
+.pageBody {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -721,13 +721,18 @@ li {
   align-items: center;
 }
 
-.page-title {
+.pageTitle {
   font-weight: bolder;
   font-size: 40px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.page-description {
-  font-weight: lighter;
+.pageDescription {
+  font-weight: bolder;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tabsWrapper {
