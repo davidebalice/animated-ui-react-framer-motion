@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export const ColumnCard = ({
@@ -19,11 +19,6 @@ export const ColumnCard = ({
       key={index}
       layout
       style={firstColumn && index === 0 ? { gridColumn: "span 2" } : {}}
-      drag={false}
-      dragConstraints={{ left: canDrag ? -850 : 0, right: 0 }}
-      dragElastic={0.2}
-      onPanEnd={(e, info) => handlePanEnd(e, info, card)}
-      onClick={(e, info) => handlePanEnd(e, info, card)}
       ref={(el) => (containerRefs.current[card] = el)}
       initial={{
         y: -250,

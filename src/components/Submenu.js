@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/logoWhite.png";
 
 function Submenu({ isHover }) {
   const subMenuAnimate = {

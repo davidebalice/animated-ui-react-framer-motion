@@ -12,7 +12,7 @@ export const ColumnCards = () => {
   const [column, setColumn] = useState(3);
   const [firstColumn, setFirstColumn] = useState(false);
   const [typeCard, setTypeCard] = useState("column");
-  const containerRefs = useRef(new Array());
+  const containerRefs = useRef([]);
 
   const handleColumn = (count) => {
     setColumn(count);
@@ -152,7 +152,7 @@ export const ColumnCards = () => {
         </div>
 
         <div>
-          Expand first column
+          Expand first result
           <div className="buttonColumnWrapper">
             <label className="buttonColumn">
               <input

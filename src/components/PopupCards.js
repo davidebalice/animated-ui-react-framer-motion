@@ -8,7 +8,7 @@ import Spacer from "../components/Spacer";
 export const PopupCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [canDrag, setCanDrag] = useState(false);
-  const containerRefs = useRef(new Array());
+  const containerRefs = useRef([]);
 
   const handlePanEnd = (e, info, card) => {
     if (selectedCard) {

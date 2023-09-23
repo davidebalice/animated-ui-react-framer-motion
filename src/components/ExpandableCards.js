@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const ExpandableCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
-  const containerRefs = useRef(new Array());
+  const containerRefs = useRef([]);
 
   const handleExpand = (e, card) => {
     if (selectedCard) {
