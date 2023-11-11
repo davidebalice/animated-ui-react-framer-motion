@@ -1085,3 +1085,105 @@ li {
 .subMenuItem:hover {
   color: #336699;
 }
+
+.flashCards {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center center;
+  background: #4da6ff;
+}
+
+.flashCardsContainer {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  perspective: 150px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.flashCard {
+  position: relative;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  background: white;
+  margin: 2rem 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.flipCardContainer {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.flipCard {
+  perspective: 1000px;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flipCard.flippedH {
+  transform: rotateY(180deg);
+}
+
+.flipCard.flippedV {
+  transform: rotateX(180deg);
+}
+
+.flipCardInner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flipCardFront,
+.flipCardBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.flipCardFront {
+  background-color: #d7fbda;
+  color: green;
+}
+
+.flipCardBackH {
+  background-color: #fbd7f8;
+  color: blue;
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.flipCardBackV {
+  background-color: #fbd7f8;
+  color: blue;
+  transform: rotateX(180deg);
+  pointer-events: none;
+}
+
+.flipCardContent {
+  padding: 20px;
+  text-align: center;
+}
+
+.flipButton {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #f5d9fa;
+  border: none;
+  border-radius: 5px;
+  pointer-events: none;
+  cursor: pointer;
+}

@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import CardsWrapper from "../components/CardsWrapper";
 import { PopupCards } from "../components/PopupCards";
+import { FlipCards } from "../components/FlipCards";
+import { FlashCards } from "../components/FlashCards";
 import { ExpandableCards } from "../components/ExpandableCards";
 import { ColumnCards } from "../components/ColumnCards";
 import Tabs from "../components/Tabs";
@@ -174,6 +176,8 @@ const Home = () => {
         <CardsWrapper section={1}>
           <ExpandableCards />
           <PopupCards />
+          <FlashCards />
+          <FlipCards />
         </CardsWrapper>
         <CardsWrapper section={2}>
           <ColumnCards />
