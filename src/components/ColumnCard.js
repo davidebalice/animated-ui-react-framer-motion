@@ -1,10 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
+import React from "react";
 
 export const ColumnCard = ({
   card,
-  handlePanEnd,
-  canDrag,
   containerRefs,
   selectedCard,
   index,
@@ -16,7 +14,7 @@ export const ColumnCard = ({
       className={
         typeCard === "column" ? "columnCard" : "columnCard columnCardRow"
       }
-      key={index}
+      key={"columnCard" + index}
       layout
       style={firstColumn && index === 0 ? { gridColumn: "span 2" } : {}}
       ref={(el) => (containerRefs.current[card] = el)}

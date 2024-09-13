@@ -19,7 +19,7 @@ export const PopupCardFullpage = ({
   return (
     <motion.div
       className={selectedCard === card ? "openedCardContainerFull" : "card"}
-      key={index}
+      key={'openedCard'+index}
       layout
       drag={selectedCard === card ? "x" : false}
       dragConstraints={{ left: canDrag ? -850 : 0, right: 0 }}
@@ -61,7 +61,7 @@ export const PopupCardFullpage = ({
               <div className="expandableCardCategoryContainer">
                 <motion.div
                   className="expandableCardCategory"
-                  key={index}
+                  key={'expandableCardCategory'+index}
                   initial={{
                     opacity: 0,
                     y: -150,
@@ -83,7 +83,7 @@ export const PopupCardFullpage = ({
             <div className="cardTextContainer">
               <motion.div
                 className="expandableCardTitle"
-                key={index}
+                key={'expandableCardTitle'+index}
                 initial={{
                   width: "62%",
                   height: "100%",
@@ -115,7 +115,7 @@ export const PopupCardFullpage = ({
                     <div className="expandableBody">
                       <div className="expandableBodyCol col-md-6 col-12">
                         <motion.div
-                          key={index}
+                          key={'expandableBody'+index}
                           initial={{
                             opacity: 0,
                             y: 250,

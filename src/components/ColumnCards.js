@@ -180,6 +180,7 @@ export const ColumnCards = () => {
               card={card}
               handlePanEnd={handlePanEnd}
               canDrag={canDrag}
+              key={'ColumnCard'+index}
               containerRefs={containerRefs}
               selectedCard={selectedCard}
               index={index}

@@ -141,6 +141,7 @@ li {
 
 .section1 {
   background: url("./assets/bgSection2.jpg");
+  background-size: cover;
 }
 
 .section2 {
@@ -1118,12 +1119,14 @@ li {
   display: flex;
   justify-content: center;
   margin: auto;
+  gap:10px;
 }
 
 .flipCard {
   perspective: 1000px;
   width: 200px;
   height: 300px;
+  overflow: hidden;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;

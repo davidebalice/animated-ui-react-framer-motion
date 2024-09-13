@@ -115,12 +115,12 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
         <div className="tabsButtons">
           {tabs.map((tab, index) => (
             <motion.li
-              key={tab.id}
+              key={'tabId'+tab.id}
               className={classes("tab", { active: activeTabIndex === index })}
               variants={tabVariant}
               animate={activeTabIndex === index ? "active" : "inactive"}
             >
-              <a href={`#${tab.id}`} onClick={() => onTabClick(index)}>
+              <a href={`#${tab.id}`} onClick={() => onTabClick(index)} key={'tabId_a'+tab.id}>
                 {tab.icon}
                 <motion.span variants={tabTextVariant}>{tab.title}</motion.span>
               </a>
@@ -130,7 +130,7 @@ const TabComponent = ({ tabs, defaultIndex = 0 }) => {
         {tabs.map((tab, index) => (
           <>
             <Tab
-              key={tab.id}
+              key={'tab'+tab.id}
               id={`${tab.id}`}
               active={activeTabIndex === index}
             />

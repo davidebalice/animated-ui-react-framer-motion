@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
-import { ExpandableCard } from "./ExpandableCard";
-import { cards } from "../data/cards";
-import Spacer from "../components/Spacer";
 import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import Spacer from "../components/Spacer";
+import { cards } from "../data/cards";
+import { ExpandableCard } from "./ExpandableCard";
 
 export const ExpandableCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -71,6 +71,7 @@ export const ExpandableCards = () => {
           <ExpandableCard
             card={card}
             index={i}
+            key={"expandableCards" + i}
             onHandleExpand={handleExpand}
             selectedCard={selectedCard}
             containerRefs={containerRefs}

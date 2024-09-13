@@ -17,7 +17,7 @@ export const ExpandableCard = ({
   return (
     <motion.div
       className="expandableCard"
-      key={index}
+      key={'expandableCard'+index}
       onClick={(e) => onHandleExpand(e, card)}
       ref={(el) => (containerRefs.current[card] = el)}
       initial={{
@@ -41,7 +41,7 @@ export const ExpandableCard = ({
     >
       <motion.div
         className="expandableCardWrapper"
-        key={index}
+        key={'expandableCardWrapper'+index}
         initial={{
           width: "100%",
           height: "90%",
@@ -67,7 +67,7 @@ export const ExpandableCard = ({
           style={{
             backgroundImage: `url(${card.img})`,
           }}
-          key={index}
+          key={'expandableCardImgSelected'+index}
           initial={{
             width: "40%",
             height: "100%",
@@ -88,7 +88,7 @@ export const ExpandableCard = ({
           <div className="expandableCardCategoryContainer">
             <motion.div
               className="expandableCardCategory"
-              key={index}
+              key={'expandableCardCategory'+index}
               initial={{
                 opacity: 0,
                 y: -150,
@@ -107,7 +107,7 @@ export const ExpandableCard = ({
 
             <motion.div
               className="expandableCardStar"
-              key={index}
+              key={'expandableCardStar'+index}
               initial={{
                 opacity: 0,
                 y: -150,
@@ -128,7 +128,7 @@ export const ExpandableCard = ({
 
         <motion.div
           className="expandableCardTitle"
-          key={index}
+          key={'expandableCardTitle'+index}
           initial={{
             width: "62%",
             height: "112%",
@@ -191,7 +191,7 @@ export const ExpandableCard = ({
       {selectedCard === card && (
         <motion.div
           className="expandableCardFooter"
-          key={index}
+          key={'expandableCardFooter'+index}
           animate={{
             opacity: selectedCard === card ? 1 : 0,
           }}

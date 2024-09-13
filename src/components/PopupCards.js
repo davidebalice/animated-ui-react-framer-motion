@@ -77,6 +77,7 @@ export const PopupCards = () => {
             {card.type === "fullpage" ? (
               <PopupCardFullpage
                 card={card}
+                key={'fullpage'+index}
                 handlePanEnd={handlePanEnd}
                 canDrag={canDrag}
                 containerRefs={containerRefs}
@@ -87,6 +88,7 @@ export const PopupCards = () => {
             ) : (
               <PopupCard
                 card={card}
+                key={'popupCard'+index}
                 handlePanEnd={handlePanEnd}
                 canDrag={canDrag}
                 containerRefs={containerRefs}

@@ -43,7 +43,7 @@ const Tab = ({ id, active, key }) => (
     <div className="tabCards">
       {id === "Nature"
         ? cards.map((card, index) => (
-            <motion.div key={index} variants={cardVariant} className="tabCard">
+            <motion.div key={'tab'+index} variants={cardVariant} className="tabCard">
               <div
                 className="tabCardImg"
                 style={{ backgroundImage: `url(${card.img})` }}
@@ -55,7 +55,7 @@ const Tab = ({ id, active, key }) => (
             .filter((card) => card.category === id)
             .map((card, index) => (
               <motion.div
-                key={index}
+                key={'tabCard'+index}
                 variants={cardVariant}
                 className="tabCard"
               >
