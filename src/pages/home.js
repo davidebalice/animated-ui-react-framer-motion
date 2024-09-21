@@ -1,20 +1,37 @@
-import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+import React, { useEffect } from "react";
+import bg from "../assets/bg1.jpg";
+import framerMotionLogo from "../assets/framer-motion.png";
+import github from "../assets/github2_white.png";
+import reactLogo from "../assets/react.png";
 import CardsWrapper from "../components/CardsWrapper";
-import { PopupCards } from "../components/PopupCards";
-import { ExpandableCards } from "../components/ExpandableCards";
 import { ColumnCards } from "../components/ColumnCards";
+import { ExpandableCards } from "../components/ExpandableCards";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Particles from "../components/Particles";
+import { PopupCards } from "../components/PopupCards";
 import Tabs from "../components/Tabs";
 import tabs from "../data/tabs";
-import reactLogo from "../assets/react.png";
-import framerMotionLogo from "../assets/framer-motion.png";
-import Particles from "../components/Particles";
-import Footer from "../components/Footer";
-import github from "../assets/github2_white.png";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import bg2 from "../assets/bg2.jpg";
+import bg3 from "../assets/bg3.jpg";
+import bg4 from "../assets/bg4.jpg";
+import bg5 from "../assets/bg5.jpg";
 
 const Home = () => {
+  useEffect(() => {
+    const preloadImages = (sources) => {
+      sources.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    preloadImages([bg2, bg3, bg4, bg5]);
+  }, []);
+
   return (
     <>
       <Particles />
@@ -54,6 +71,7 @@ const Home = () => {
             delay: 0.3,
           }}
           className="homepage"
+          style={{ backgroundImage: `url("${bg}")` }}
         >
           <motion.div
             initial={{

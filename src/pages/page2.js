@@ -2,6 +2,7 @@ import NavBar from "../components/Navbar";
 import { motion } from "framer-motion";
 import github from "../assets/github2_white.png";
 import Navbar from "../components/Navbar";
+import bg from "../assets/bg3.jpg";
 
 function Page2() {
   return (
@@ -14,6 +15,7 @@ function Page2() {
         y: 0,
       }}
       transition={{ duration: 0.6, delay: 0.1 }}
+      style={{ backgroundImage: `url("${bg}")` }}
     >
       <div
         style={{

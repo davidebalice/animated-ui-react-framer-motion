@@ -1,5 +1,5 @@
-import NavBar from "../components/Navbar";
 import { motion } from "framer-motion";
+import bg from "../assets/bg5.jpg";
 import github from "../assets/github2_white.png";
 import Navbar from "../components/Navbar";
 
@@ -22,6 +22,7 @@ function Page4() {
       transition={{
         duration: 0.6,
       }}
+      style={{ backgroundImage: `url("${bg}")` }}
     >
       <div
         style={{
